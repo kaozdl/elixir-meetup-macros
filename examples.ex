@@ -12,15 +12,6 @@ Para hacernos una idea de como funcionan empecemos con lo siguiente:
 La manera mas usual de usar elixir es Modulo.funcion(argumentos)
 """
 
-
-
-
-
-
-
-
-
-
 if 1 + 2 == 3 do
   "this"
 else
@@ -144,7 +135,7 @@ defmodule MyIfs do
   defmacro m_if(condition, do: if_cond, else: if_not_cond) do
     quote do
       case unquote(condition) do
-        false -> unquote(if_cond)
+        true -> unquote(if_cond)
         _ -> unquote(if_not_cond)
       end
     end
@@ -202,4 +193,5 @@ esto es util para inyectar código de bibliotecas que usamos en nuestro código.
 https://github.com/phoenixframework/phoenix/blob/master/lib/phoenix/controller/pipeline.ex
 https://github.com/phoenixframework/phoenix/blob/master/lib/phoenix/endpoint.ex
 https://github.com/phoenixframework/phoenix/blob/master/lib/phoenix/router.ex
+https://github.com/jarednorman/canada/blob/master/lib/canada.ex
 """
